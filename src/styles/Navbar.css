@@ -1,0 +1,105 @@
+.transparent-navbar {
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(50px);
+    padding: 20px 40px;
+  }
+  
+  .navbar-toggler {
+    border: none;
+    background-color: white;
+    border-radius: 15px;
+  }
+  
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 80px;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(0px);
+    box-shadow: #000;
+    /* Optional: can remove if no glassmorphism is intended */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 10;
+  }
+  
+  .logo img {
+    height: 50px;
+    width: auto;
+    align-items: left;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+  }
+    .logo img:hover {
+    transform: scale(1.05);
+  }
+
+  .nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    cursor: pointer;
+    /* text-shadow: #c21c1c; */
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .login-btn {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+    /* green glow */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    box-shadow: 0 6px 14px rgba(0, 128, 0, 0.4);
+  }
+  
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      background-color: rgba(255, 255, 255, 0.9); /* Light glassy white */
+      backdrop-filter: blur(20px);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-top: 10px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav-links {
+      flex-direction: column;
+    }
+  }
+  
+    .nav-links {
+      margin: 10px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .nav-links a {
+      margin: 5px 10px;
+    }
+  
+    .auth-buttons {
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .navbar-collapse {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+  

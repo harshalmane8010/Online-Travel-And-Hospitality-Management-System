@@ -1,0 +1,55 @@
+.login-page {
+  background: linear-gradient(135deg, #4fb2b0, #42b72b);
+  background-size: cover;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.login-glass {
+  padding: 20px 25px;
+  max-width: 400px;
+  width: 100%;
+  backdrop-filter: blur(20px);
+  background: rgba(250, 250, 250, 0.482);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+
+}
+
+.login-glass h2 {
+  margin-bottom: 16px;
+  text-shadow: 1px 1px 10px rgba(0, 58, 128, 0.6);
+}
+
+.form-control-glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.form-control-glass::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.login-glass-btn {
+  background: linear-gradient(135deg, #ff6600a5, #f4a875);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out;
+}
+
+.login-glass-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(53, 53, 157, 0.783);
+}
+
+.mb-3,
+.mb-4 {
+  margin-bottom: 12px !important;
+}
+
