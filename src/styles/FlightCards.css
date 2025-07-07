@@ -1,0 +1,84 @@
+.flight-card-wrapper {
+
+    display: grid;
+  
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  
+    gap: 20px;
+  
+    padding: 40px;
+  
+    background-color: #f5f5f5;
+  
+    border-radius: 12px;
+  
+  }
+  
+  .flight-card {
+  
+    display: flex;
+  
+    align-items: center;
+  
+    background-color: white;
+  
+    border-radius: 10px;
+  
+    padding: 12px 16px;
+  
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  
+    transition: transform 0.2s;
+  
+  }
+  
+  .flight-card:hover {
+  
+    transform: translateY(-3px);
+  
+  }
+  
+  .flight-img {
+  
+    width: 48px;
+  
+    height: 48px;
+  
+    border-radius: 50%;
+  
+    object-fit: cover;
+  
+    margin-right: 16px;
+  
+  }
+  
+  .flight-info h3 {
+  
+    font-size: 16px;
+  
+    font-weight: 600;
+  
+    margin: 0;
+  
+    color: #212121;
+  
+  }
+  
+  .flight-info p {
+  
+    font-size: 14px;
+  
+    margin: 4px 0 0 0;
+  
+    color: #555;
+  
+  }
+   
+  .via-link {
+    color: #0c0c0c;
+    cursor: pointer;
+    text-decoration: underline;
+   }
+   .via-link:hover {
+    color: #d8e0e8;
+   }
