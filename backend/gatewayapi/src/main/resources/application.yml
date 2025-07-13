@@ -1,0 +1,65 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: GATEWAY-API
+  
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: USER-SERVICE
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/user-api/**
+            - id: BOOKING-SERVICE
+              uri: lb://BOOKING-SERVICE
+              predicates:
+                - Path=/bookings/**
+            - id: FLIGHT-SERVICE
+              uri: lb://FLIGHT-SERVICE
+              predicates:
+                - Path=/flights/**
+            - id: HOTEL-SERVICE
+              uri: lb://HOTEL-SERVICE
+              predicates:
+                - Path=/hotels/**
+            - id: PACKAGE-SERVICE
+              uri: lb://PACKAGE-SERVICE
+              predicates:
+                - Path=/api/packages/**
+            - id: ITINERARY-SERVICE
+              uri: lb://ITINERARY-SERVICE
+              predicates:
+                - Path=/api/itineraries/**
+            - id: OFFER-SERVICE
+              uri: lb://OFFER-SERVICE
+              predicates:
+                - Path=/api/promotions/**
+            - id: OFFER-SERVICE
+              uri: lb://OFFER-SERVICE
+              predicates:
+                - Path=/api/offers/**
+            - id: INVOICE
+              uri: lb://INVOICE
+              predicates:
+                - Path=/api/invoices/**
+            - id: payment
+              uri: lb://payment
+              predicates:
+                - Path=/api/payments/**
+            - id: SUPPORT-SERVICE
+              uri: lb://SUPPORT-SERVICE
+              predicates:
+                - Path=/api/support-tickets/**
+            - id: REVIEW-SERVICE
+              uri: lb://REVIEW-SERVICE
+              predicates:
+                - Path=/api/reviews/**								
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+
+    
