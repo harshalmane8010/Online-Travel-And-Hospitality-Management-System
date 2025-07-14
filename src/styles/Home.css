@@ -1,365 +1,265 @@
-.home-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 90vh;
-  margin-top: 60px;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.233)),
-    url('../assets/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg') no-repeat center center / cover;
-  z-index: -1;
+
+/* Benefit Card */
+.benefit-card {
+  background-color: #e7ecf0;
+  transition: transform 0.3s ease;
+}
+.benefit-card:hover {
+  transform: translateY(-5px);
 }
 
-/* ========== NAVBAR ========== */
-.transparent-navbar {
-  background-color: rgb(255, 255, 255);
-  backdrop-filter: blur(50px);
-  padding: 20px 40px;
+/* Review Card */
+.review-card {
+  background-color: #ffffff;
 }
 
-.navbar-toggler {
-  border: none;
-  background-color: white;
-  border-radius: 15px;
-}
-
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 80px;
-  background-color: rgb(255, 255, 255);
-  backdrop-filter: blur(0px);
-  box-shadow: #000;
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Carousel Package Card */
+.package-card {
   width: 100%;
-  height: 60px;
-  z-index: 10;
-}
-
-.logo {
-  font-size: 14px;
-  font-weight: 700;
-  color: white;
-}
-
-.logo span {
-  color: green;
-}
-
-.nav-links {
-  margin: 10px 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.nav-links a {
-  margin: 5px 10px;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.auth-buttons {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.login-btn {
-  background-color: green;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  /* box-shadow: 0 4px 10px rgb(0, 0, 0); */
-  transition: box-shadow 0.3s ease;
-}
-
-.login-btn:hover {
-  box-shadow: 0 6px 14px rgba(6, 6, 6, 0.4);
-}
-
-.navbar-collapse {
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-@media (max-width: 991px) {
-  .navbar-collapse {
-    background-color: rgba(255, 255, 255, 0.779);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 1rem;
-    margin-top: 10px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-links {
-    flex-direction: column;
-  }
-
-  .main-header {
-    flex-wrap: wrap;
-    padding: 20px 40px;
-    text-align: center;
-  }
-}
-
-/* ========== LOGIN MODAL ========== */
-.login-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 10, 10, 0.6);
-  backdrop-filter: blur(6px);
-  z-index: 1050;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login-modal-content {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(18px);
-  padding: 40px 30px;
-  border-radius: 16px;
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-}
-
-.login-modal-close {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  background: transparent;
-  color: white;
-  font-size: 24px;
-  border: none;
-  cursor: pointer;
-}
-
-.login-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  backdrop-filter: blur(2px);
-  background: rgba(220, 220, 220, 0);
-  z-index: 1050;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.login-popup {
-  background: rgba(0, 0, 0, 0.50);
-  backdrop-filter: blur(20px);
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 0 00px rgba(0, 0, 0, 0.2);
-  position: relative;
-  max-width: 400px;
-  width: 90%;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 16px;
-  font-size: 26px;
-  background: transparent;
-  border: none;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-}
-
-.btn-transparent {
-  background: none;
-  border: none;
-  color: black;
-  font-weight: 500;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-/* ========== HERO SECTION ========== */
-.hero {
-  position: relative;
-  height: 100vh;
-  background: url('./pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg') center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 80px;
-  color: white;
-  text-align: left;
-}
-
-.hero h1 {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.2;
-  text-shadow: 1px 1px 5px #000;
-}
-
-.hero p {
-  font-size: 18px;
-  margin: 10px 0 30px;
-  text-shadow: 1px 1px 4px #000;
-}
-
-/* ========== SEARCH BOX ========== */
-.search-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
-  max-width: 950px;
-  background: white;
+  max-width: 240px;
   border-radius: 12px;
-  padding: 10px;
+  overflow: hidden;
+  background-color: #bbe0f4;
+  margin: 0 auto;
+}
+.package-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.package-info {
+  padding: 12px;
+}
+.package-info h5 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.package-info .price {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #555;
+}
+.package-info .explore-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
 }
 
-.search-item {
-  flex: 1;
-  min-width: 180px;
-  display: flex;
+/* Search Bar */
+.searchbar-container {
+  margin-bottom: 350px;
+  transition: margin 0.3s ease-in-out;
+}
+.searchbar-container .form-control {
+  height: 50px; /* Increase height */
+  font-size: 1.1rem; /* Optional: make text larger */
+  padding: 0 20px;
+}
+
+.searchbar-container .btn {
+  height: 50px; /* Match button height with input */
+  font-size: 1rem;
+  padding: 0 30px;
+}
+
+
+/* Explore Button */
+.explore-btn {
+  background: linear-gradient(90deg, #FFA500, #FF8C00);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
+  transition: all 0.3s ease;
 }
-
-.search-item input {
-  border: none;
-  outline: none;
-  width: 100%;
-}
-
-.explore-btn {
-  background-color: green;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
-  transition: box-shadow 0.3s ease;
-}
-
 .explore-btn:hover {
-  box-shadow: 0 6px 14px rgba(0, 128, 0, 0.4);
+  background: linear-gradient(90deg, #FF8C00, #FFA500);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px 5px rgba(128, 124, 120, 0.6);
 }
-
-/* ========== TRENDING DESTINATIONS ========== */
-.trending-destinations {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.trending-destinations h1 {
-  font-size: 2.5rem;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.subtext {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-.destination-card {
-  border-radius: 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
+.arrow {
+  font-size: 1.2em;
   transition: transform 0.3s ease;
-  text-align: center;
+}
+.explore-btn:hover .arrow {
+  transform: translateX(5px);
 }
 
-.destination-card img {
-  height: 160px;
-  object-fit: cover;
+.explore-link {
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+.explore-link:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+.z-3 {
+  z-index: 3;
 }
 
-.destination-card .card-title {
-  margin: 15px 0;
-  color: #333;
-  font-size: 1.1rem;
+.packageexplore-btnn {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid #0d6efd;
+  background-color: transparent;
+  color: #007bff;
 }
 
-.destination-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+.packageexplore-btnn {
+  /* background-color: #0d6efd; */
+  color: rgb(54, 116, 230);
+}
+.packageexplore-btnn:hover {
+  background-color: #007bff;
+  color: #fff;
 }
 
-/* ========== OFFER BANNER ========== */
-.offer-banner {
-  max-width: 960px;
-  margin: 40px auto;
-  padding: 30px 24px;
-  background: linear-gradient(135deg, #1de9b6, #1dc4e9, #6a82fb);
-  background-size: 300% 300%;
-  animation: gradientWave 5s ease infinite;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-  color: #ffffff;
-  text-align: center;
-}
 
-@keyframes gradientWave {
-  0% {
-    background-position: 0% 100%;
-  }
-  50% {
-    background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 100%;
-  }
+/* Suggestion Dropdown */
+.suggestion-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 10;
+  margin-top: 8px;
 }
-
-.offer-heading {
-  font-weight: 800;
-  font-size: 2rem;
-  margin-bottom: 12px;
-  color: #ffffff;
-  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-}
-
-.offer-subtext {
-  font-size: 1rem;
-  color: #f5f5f5;
-  opacity: 0.9;
-  max-width: 600px;
-  margin: 0 auto 20px;
-}
-
-.offer-btn {
-  background: linear-gradient(135deg, #ff6f61, #ff9472);
-  color: white;
+.suggestion-dropdown .list-group-item {
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
   border: none;
-  padding: 12px 26px;
-  font-weight: bold;
-  font-size: 1rem;
-  border-radius: 50px;
-  box-shadow: 0 6px 16px rgba(255, 111, 97, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.suggestion-dropdown .list-group-item:hover {
+  background-color: #f0f8ff;
+  color: #007bff;
+  font-weight: 500;
 }
 
-.offer-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 10px 24px rgba(255, 111, 97, 0.5);
+/* Rating Box */
+.star-green {
+  color: #174133;
+  font-size: 1.2rem;
 }
+.star-grey {
+  color: #dcdcdc;
+  font-size: 1.2rem;
+}
+.rating-box {
+  background-color: white;
+  border: 1px solid #dcdcdc;
+  display: inline-flex;
+  z-index: 10;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(2, 2, 2, 0.473);
+}
+.rating-box-container {
+  position: relative;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .searchbar-container {
+      margin-bottom: 100px;
+  }
+  .explore-btn {
+      padding: 8px 20px;
+      font-size: 0.9rem;
+  }
+  .package-card {
+      max-width: 100%;
+  }
+  .package-img {
+      height: 150px;
+  }
+  .benefit-card {
+      margin-bottom: 20px;
+  }
+  .rating-box {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+  }
+}
+@media (max-width: 576px) {
+  .searchbar-container {
+      margin-bottom: 50px;
+  }
+  .explore-btn {
+      padding: 6px 15px;
+      font-size: 0.8rem;
+  }
+  .package-img {
+      height: 130px;
+  }
+  .package-info h5 {
+      font-size: 1rem;
+  }
+  .package-info .price {
+      font-size: 13px;
+  }
+  .rating-box {
+      font-size: 0.9rem;
+  }
+}
+
+.destcard img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.destcard {
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  /* padding: 2em; */
+  filter: drop-shadow(0 0 2em #565ab0aa);
+  height: 500px;
+}
+
+.destcard-body {
+  background-color: #9fe8dfa7;
+  text-align: center;
+}
+
+.banner {
+  background: linear-gradient(to right, #517ad3, #2c3d72);
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+ 
+  /* padding-bottom: 2rem; */
+  text-align: center;
+}
+  
+ 
+  
+  
+  

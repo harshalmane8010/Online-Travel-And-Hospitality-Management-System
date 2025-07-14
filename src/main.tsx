@@ -1,8 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
 import App from './App';
+import { AuthProvider } from './context/AuthContext'; // ✅ Add this
+
 
 const container = document.getElementById('root');
 
@@ -11,7 +12,9 @@ if (container) {
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App />
+        <AuthProvider> {/* ✅ Wrap App here */}
+          <App />
+        </AuthProvider>
       </BrowserRouter>
     </React.StrictMode>
   );

@@ -1,97 +1,168 @@
-import React from 'react';
-import '../styles/Home.css';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import image1 from '../assets/image1.png';
-import image2 from '../assets/kashmir.png';
-import image3 from '../assets/thiland.png';
-import image4 from '../assets/europe.png';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { Row, Col, FormControl, Button, ListGroup } from 'react-bootstrap';
+import FullScreenCarousel from './FullScreenCarousel';
+import '../styles/Home.css';
+import TourismCarousel from './TourismCarousel';
+import { useNavigate } from 'react-router-dom';
+import TrendingDestinations from './TrendingDestinations';
+import ExperienceBanner from './ExperienceBanner';
+import axiosInstance from '../api/axiosInstance'; // ✅ Secure Axios
 
-interface Destination {
+interface Benefit {
+  icon: string;
   title: string;
-  image: string;
+  description: string;
 }
 
+const benefits: Benefit[] = [
+  {
+    icon: '✈️',
+    title: 'Customised Itineraries',
+    description:
+      'Enjoy our bespoke tour packages that can be tailored according to your preferences for personalised experience.',
+  },
+  {
+    icon: '💰',
+    title: 'Wallet-Friendly Prices',
+    description:
+      'Every traveller from worldwide can embark on unforgettable journeys with our unbeatable holiday package prices.',
+  },
+  {
+    icon: '🔥',
+    title: 'Exciting Deals',
+    description:
+      'Our platform comprises perfect deals and discounts on all exclusive holiday packages to ensure value-for-money.',
+  },
+  {
+    icon: '🎧',
+    title: '24/7 Support',
+    description:
+      'Our customer support team is always available to assist you and resolve travel-related queries instantly.',
+  },
+];
+
 const Home: React.FC = () => {
-  const destinations: Destination[] = [
-    { title: 'Kerala', image: image1 },
-    { title: 'Kashmir', image: image2 },
-    { title: 'Thailand', image: image3 },
-    { title: 'Europe', image: image4 },
-    { title: 'Pune', image: image4 },
-    { title: 'Mumbai', image: image4 },
-    { title: 'Akole', image: image4 },
-    { title: 'Sangamaner', image: image4 },
-  ];
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [allPackages, setAllPackages] = useState<any[]>([]);
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+
+  useEffect(() => {
+    axiosInstance
+      .get('/api/packages')
+      .then(res => setAllPackages(res.data))
+      .catch(err => {
+        console.error('Error fetching packages:', err);
+        if (err.response?.status === 401) {
+          alert('Session expired. Please log in again.');
+          navigate('/login');
+        }
+      });
+  }, [navigate]);
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchQuery(value);
+
+    if (value.length > 0) {
+      const filtered = allPackages
+        .map(pkg => pkg.name)
+        .filter(name => name.toLowerCase().includes(value.toLowerCase()));
+      setSuggestions(filtered.slice(0, 5));
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  const handleSearch = (query?: string) => {
+    navigate('/explore', { state: { searchQuery: query || searchQuery } });
+    setSuggestions([]);
+  };
 
   return (
-    <div className="home-background">
-      {/* Hero Section */}
-      <section className="hero">
-        <p>Make Your Hassle-Free Travel Plans Now!</p>
-        <h1>To The World Of An <br /> Incredible Vacation.</h1>
-        <div className="search-box">
-          <div className="search-item">
-            <span role="img" aria-label="location">📍</span>
-            <input type="text" placeholder="Type Destination" />
+    <>
+      <FullScreenCarousel />
+      <br />
+      <Row className="justify-content-center mb-5 searchbar-container">
+        <Col xs={10} md={6}>
+          <div className="d-flex flex-column position-relative bg-white rounded-pill shadow p-2">
+            <div className="d-flex">
+              <FormControl
+                type="text"
+                placeholder="Enter Your Dream Destination!"
+                className="border-0 rounded-pill px-3"
+                value={searchQuery}
+                onChange={handleSearchChange}
+              />
+              <Button
+                variant="warning"
+                className="rounded-pill px-4 fw-bold"
+                onClick={() => handleSearch()}
+              >
+                Search
+              </Button>
+            </div>
+            {suggestions.length > 0 && (
+              <ListGroup className="suggestion-dropdown">
+                {suggestions.map((suggestion, index) => (
+                  <ListGroup.Item
+                    key={index}
+                    action
+                    onClick={() => handleSearch(suggestion)}
+                  >
+                    {suggestion}
+                  </ListGroup.Item>
+                ))}
+              </ListGroup>
+            )}
           </div>
-          <div className="search-item">
-            <span role="img" aria-label="calendar">📅</span>
-            <input type="date" />
-          </div>
-          <div className="search-item">
-            <span role="img" aria-label="duration">⏱️</span>
-            <input type="text" placeholder="Duration" />
-          </div>
-          <div className="search-item">
-            <span role="img" aria-label="guests">👥</span>
-            <input type="number" placeholder="Guests" />
-          </div>
-          <Button className="explore-btn">Explore Now</Button>
-        </div>
-      </section>
+        </Col>
+      </Row>
 
-      {/* Trending Destinations */}
-      <section className="trending-destinations">
-        <h1><b>Top Trending Destinations</b></h1>
-        <p className="subtext"><b><em>Explore the hottest travel spots around the globe.</em></b></p>
-        <Container>
-          <Row className="justify-content-center g-4">
-            {destinations.map((place, index) => (
-              <Col key={index} xs={10} sm={6} md={4} lg={3}>
-                <Card className="destination-card">
-                  {place.image && (
-                    <Card.Img variant="top" src={place.image} alt={place.title} />
-                  )}
-                  <Card.Body>
-                    <Card.Title>{place.title}</Card.Title>
-                  </Card.Body>
-                </Card>
-              </Col>
+      <div>
+        <button className="explore-btn" onClick={() => navigate('/explore')}>
+          Explore More Packages
+          <span className="arrow">→</span>
+        </button>
+      </div>
+
+      <div className="container text-center mt-4">
+        
+        <TrendingDestinations />
+        <TourismCarousel />
+        <ExperienceBanner />
+
+        <div className="container my-5">
+          <div className="row align-items-center mb-4 justify-content-between">
+            <div className="col-md-6 text-md-start text-center">
+              <h2 className="fw-bold">Benefits of Booking With Us</h2>
+            </div>
+            <div className="col-md-6 text-md-end text-center mt-3 mt-md-0">
+              <div className="rating-box d-inline-flex align-items-center p-2 rounded border">
+                <span className="fw-semibold me-2 fs-5">Great</span>
+                <div className="text-success fs-4">★★★★☆</div>
+                <span className="me-1 text-dark">13,686 reviews on</span>
+                <span className="text-success fw-bold">★ Trustpilot</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="row text-center mb-5">
+            {benefits.map((benefit, index) => (
+              <div className="col-md-3 mb-4" key={index}>
+                <div className="benefit-card p-3 h-100 shadow-sm rounded">
+                  <div className="fs-1 mb-2">{benefit.icon}</div>
+                  <h6 className="fw-bold">{benefit.title}</h6>
+                  <p className="text-muted small">{benefit.description}</p>
+                </div>
+              </div>
             ))}
-          </Row>
-        </Container>
-      </section>
-
-      {/* Offer Banner */}
-      <section>
-        <div className="offer-banner mt-5 mb-5">
-          <Container>
-            <Row className="align-items-center">
-              <Col md={8} className="text-center text-md-start">
-                <h2 className="offer-heading">🎉 Get Flat 30% Off on Early Bird Bookings!</h2>
-                <p className="offer-subtext">
-                  Book your dream vacation before the rush begins and unlock exclusive deals on hotels, flights, and complete packages.
-                </p>
-              </Col>
-              <Col md={4} className="text-center text-md-end">
-                <button className="offer-btn">Explore Offer</button>
-              </Col>
-            </Row>
-          </Container>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,0 +1,48 @@
+.category-container {
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    margin: 20px auto;
+    padding: 8px 12px;
+    border-color: rgb(77, 187, 224);
+  }
+   
+  .category-item {
+    white-space: nowrap;
+    padding: 5px 10px;
+    border-radius: 50px;
+    transition: background 0.3s;
+    cursor: pointer;
+    
+  }
+   
+  .category-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+   
+  .category-text {
+    font-weight: 500;
+    color: #333;
+  }
+   
+  .active-category {
+    border: 2px solid #0d6efd;
+     color: #0d6efd;
+     background-color: #e7f1ff;
+     padding: 6px 12px;
+     border-radius: 50px;
+     box-shadow: 0 0 10px rgba(13, 110, 253, 0.2);
+     transition: all 0.3s ease;
+    }
+    
+.category-item:hover {
+    background-color: #b0c3d4;
+     cursor: pointer;
+     transform: scale(1.02);
+     transition: all 0.3s ease;
+    }
+    
+    
+   

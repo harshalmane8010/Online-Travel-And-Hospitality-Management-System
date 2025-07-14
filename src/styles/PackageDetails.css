@@ -1,0 +1,140 @@
+/* body{
+  background-color: #e4e8f0;
+} */
+
+.details-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+}
+ 
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 700px;
+  border-radius: 10px;
+}
+ 
+.info-item {
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #6aa6ff;
+}
+ 
+.info-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+ 
+.info-text {
+  margin-bottom: 0;
+  font-size: 15px;
+  color: #333;
+}
+ 
+.itinerary-section {
+  padding: 10px 0;
+}
+ 
+.itinerary-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background-color: #f4f8ff;
+  padding: 12px 15px;
+  border-left: 4px solid #6aa6ff;
+  border-radius: 10px;
+}
+ 
+.day-badge {
+  background-color: #0d6efd;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-weight: bold;
+  white-space: nowrap;
+  font-size: 14px;
+}
+ 
+.activity-list ul {
+  padding-left: 18px;
+  margin-bottom: 0;
+}
+ 
+.price-box {
+  font-size: 18px;
+  color: #333;
+}
+
+.combined-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+  height: 100%;
+}
+
+.details-card {
+  background-color: #ffffff;
+  height: 100%;
+  
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+ 
+@media (max-width: 768px) {
+  .day-badge {
+    padding: 4px 10px;
+    font-size: 13px;
+  }
+ 
+  .itinerary-item {
+    flex-direction: column;
+  }
+ 
+  .image-box img {
+    max-height: 300px;
+  }
+}
+ 

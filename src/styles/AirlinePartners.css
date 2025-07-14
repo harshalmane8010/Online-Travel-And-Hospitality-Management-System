@@ -1,0 +1,59 @@
+.airline-partners-container {
+  padding: 30px 40px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.airline-partners-container h2 {
+  font-size: 22px;
+  color: #2d2d2d;
+  margin-bottom: 24px;
+}
+
+.airline-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.airline-card-1,
+.airline-card-2 {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Background images */
+.airline-card-1 {
+  background-image: url('../assets/indigo plane.png'); /* ✅ Make sure this file is in public/assets */
+}
+
+.airline-card-2 {
+  background-image: url('../assets/spicejet.jpg'); /* ✅ Make sure this file is in public/assets */
+}
+
+/* Hover effect */
+.airline-card-1:hover,
+.airline-card-2:hover {
+  transform: translateY(-5px);
+  box-shadow: 2px 2px 20px 2px #bae4f03f;
+}
+
+.airline-name {
+  color: rgba(0, 0, 0, 0);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 16px;
+}

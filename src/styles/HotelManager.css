@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f1f4f9;
+    color: #333;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Main */
+  .main-content {
+    background: #f9fbfd;
+    flex-grow: 1;
+  }
+  
+  /* Glass utility */
+  .glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  
+  /* Table */
+  .table-transparent td {
+    background: rgba(255, 255, 255, 0.85);
+  }
+  
+  h2 {
+    font-weight: 600;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  

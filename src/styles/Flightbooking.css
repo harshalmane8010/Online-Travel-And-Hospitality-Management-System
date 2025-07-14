@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* background-image: url('../assets/hendrik-cornelissen--qrcOR33ErA-unsplash.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  color: #333;
+  line-height: 1.6;
+}
+.hero-section {
+  background-image: url('../assets/hendrik-cornelissen--qrcOR33ErA-unsplash.jpg'); /* adjust path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.main-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+ 
+.menu-tab {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tab {
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  color:#ff6500;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.tab:hover,
+.tab.active {
+  background-color: #ff6500;
+  color: #ff6500;
+}
+
+.trip-type {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.trip-type label {
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.section label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 14px;
+
+}
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #ff6500;
+}
+
+/* Traveller Dropdown */
+.dropdown-box {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.dropdown-panel {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
+  background-color: #fff;
+}
+
+.traveller-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.search-btn button {
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ff6500;
+  border: none;
+  border-radius: 32px;
+  cursor: pointer;
+  background: linear-gradient(to right, #0078FF, #00AEEF);
+  box-shadow: 0 5px 15px rgba(0, 120, 255, 0.3);
+  transition: background 0.3s ease;
+}
+
+.search-btn button:hover {
+  background: #006ad6;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+ /* @media (max-width: 768px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+
+} */
