@@ -1,0 +1,20 @@
+.review-box {
+    background: #fff;
+    border-radius: 8px;
+  }
+  
+  .stars .star {
+    font-size: 1.6rem;
+    color: #ffd700;
+    margin-right: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-btn {
+    background: orange !important;
+    border-color: orange !important;
+  }
+  
+  .submit-btn:hover {
+    background: #ff8c00 !important;
+  }

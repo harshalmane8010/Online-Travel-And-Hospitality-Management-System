@@ -1,0 +1,135 @@
+.user-dashboard-container {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-header {
+  background: linear-gradient(to right, #6366f1, #60a5fa);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.profile-item {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.profile-item strong {
+  display: block;
+  color: #93c5fd;
+}
+
+.profile-item span {
+  color: #000000;
+}
+
+.table-header-row {
+  background-color: #1e293b;
+  color: #f9fafb;
+}
+.ticket-card {
+  background-color: #fff;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+.ticket-card:hover {
+  transform: translateY(-2px);
+}
+.ticket-header {
+  font-size: 1.05rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px dashed #fff;
+}
+.ticket-body {
+  font-size: 0.95rem;
+}
+
+.user-dashboard-container {
+  font-family: 'Segoe UI', sans-serif;
+}
+ 
+.dashboard-header {
+  background: linear-gradient(to right, #6366f1, #60a5fa);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+ 
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+ 
+.profile-item {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+ 
+.profile-item strong {
+  display: block;
+  color: #93c5fd;
+}
+ 
+.profile-item span {
+  color: #000000;
+}
+ 
+.table-header-row {
+  background-color: #1e293b;
+  color: #f9fafb;
+}
+ 
+.ticket-card {
+  background-color: #fff;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Let the grid column control consistent height */
+  padding: 1rem;
+}
+ 
+ 
+.ticket-card:hover {
+  transform: translateY(-2px);
+}
+ 
+.ticket-header {
+  font-size: 1.05rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px dashed #fff;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 8px 8px 0 0;
+}
+ 
+.ticket-body {
+  font-size: 0.95rem;
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  color: #000;
+}
+ 
+.ticket-footer {
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  color: #666;
+  background-color: #f3f4f6;
+  border-top: 1px solid #e5e7eb;
+  border-radius: 0 0 8px 8px;
+  text-align: end;
+}
+ 
+ 

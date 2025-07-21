@@ -1,0 +1,62 @@
+.rev-container {
+  background-color: #f9f9f9;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+}
+
+.rev-header {
+  padding: 0 0.5rem;
+}
+
+.rev-link {
+  text-decoration: none;
+  font-weight: 500;
+  color: #0d6efd;
+  transition: color 0.3s;
+}
+
+.rev-link:hover {
+  color: #063da4;
+  text-decoration: underline;
+}
+
+.rev-card {
+  border-radius: 10px;
+  min-width: 250px;
+  max-width: 260px;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #eee;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rev-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rev-message {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.rev-footer {
+  font-size: 0.85rem;
+  background-color: transparent;
+  border-top: none;
+  padding-left: 0;
+}
+
+.star-row .star {
+  color: #00b67a;
+  margin-right: 2px;
+  font-size: 1.1rem;
+}

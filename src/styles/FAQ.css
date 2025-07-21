@@ -1,0 +1,73 @@
+/* Container for the entire page */
+.faq-container {
+  margin-top: 30px;
+}
+
+/* Ticket card styles */
+.ticket-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  background-color: #ffffff;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 300px; /* Increased vertical height */
+  padding: 30px 20px; /* Inner spacing */
+}
+
+/* Ticket card header */
+.ticket-card .card-header {
+  background-color: #007bff;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Form inputs spacing */
+.ticket-card .form-group {
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Reduce width of the textarea */
+.ticket-card .form-group textarea.form-control {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Submit button styling */
+.ticket-card button {
+  width: 150px;
+  font-weight: 500;
+}
+
+/* Center the submit button */
+.button-center {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* FAQ heading */
+h2 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* FAQ accordion headers */
+.accordion-button {
+  font-weight: 600;
+}
+
+/* Responsive padding (optional) */
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 0 10px;
+  }
+}

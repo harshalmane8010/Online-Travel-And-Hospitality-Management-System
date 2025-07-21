@@ -1,0 +1,62 @@
+.cheapest-flights-container {
+    padding: 20px 40px;
+  }
+  
+  .cheapest-flights-container h2 {
+    margin-bottom: 16px;
+    font-size: 22px;
+    color: #333;
+  }
+  
+ .cheapest-flights-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .cheapest-flights-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .cheap-flight-card {
+      min-width: 200px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 16px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+  }
+  
+  .cheap-flight-card:hover {
+  /* transform: scale(1.05);
+  transition: transform 0.3s ease; */
+  cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 2px 2px 20px 2px #bae4f070;
+  }
+  .airline-logo {
+    height: 40px;
+    margin-bottom: 10px;
+    }
+  
+  .route {
+      font-weight: bold;
+      margin-bottom: 6px;
+  
+  }
+  
+  .airline {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 4px;
+  }
+  
+  .price {
+    font-size: 16px;
+   color: #2b8a3e;
+    font-weight: bold;
+  
+  }
+   

@@ -1,0 +1,96 @@
+.experience-banner {
+    background: linear-gradient(to right, #003973, #e5e5be);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    
+  }
+   
+  .text-area .trust-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    color: #fff;
+  }
+   
+  .text-area .experience-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+  }
+   
+  .text-area .experience-desc {
+    font-size: 16px;
+    color: #f8f8f8;
+  }
+   
+  .text-area .highlight {
+    font-weight: bold;
+    color: #ffd700;
+  }
+   
+  .testimonial-btn {
+    background-color: #ff5722;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+   
+  /* ✅ FIXED: horizontal image layout (no overlapping) */
+  .image-stack-horizontal {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+   
+  .img-card {
+    position: relative;
+    width: 150px;
+    height: 215px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+   
+  .img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+   
+  .rating {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ff9800;
+  }
+   
+  .heart {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    font-size: 18px;
+    color: red;
+  }
+   
+  /* Responsive */
+  @media (max-width: 768px) {
+    .img-card {
+      width: 100px;
+      height: 140px;
+    }
+   
+    .image-stack-horizontal {
+      justify-content: center;
+    }
+  }
+   

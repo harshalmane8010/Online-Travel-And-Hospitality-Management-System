@@ -1,29 +1,83 @@
-import React, { useState, type FormEvent, type ChangeEvent } from 'react';
+import React, {
+  useState,
+  type ChangeEvent,
+  type FormEvent,
+} from 'react';
+import { Container, Card, Form, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import axios from '../api/axiosInstance';
 import '../styles/Login.css';
-import { Form, Button, Container, Card } from 'react-bootstrap';
 
 interface LoginProps {
   onClose: () => void;
   onSignupClick: () => void;
+  setUserEmail: (email: string) => void;
+  setUserName: (name: string) => void; // ✅ new prop
 }
 
-const Login: React.FC<LoginProps> = ({ onClose, onSignupClick }) => {
+const Login: React.FC<LoginProps> = ({
+  onClose,
+  onSignupClick,
+  setUserEmail,
+  setUserName,
+}) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
-  const dummyUser = {
-    email: 'user@example.com',
-    password: 'password123',
-  };
-
-  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (email === dummyUser.email && password === dummyUser.password) {
-      alert(`Welcome back, ${email.split('@')[0]}!`);
+    try {
+      const response = await axios.post('/user-api/users/login', {
+        username: email,
+        password,
+      });
+
+      const { token, message } = response.data;
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const roles: string[] = payload.roles?.map((r: any) => r.roleName) || [];
+      const name: string = payload.name || email; // fallback to email if name isn't in token
+
+      if (!roles.length) {
+        alert('Access denied: No roles assigned.');
+        return;
+      }
+
+      login(token);
+      localStorage.setItem('token', token);
+      localStorage.setItem('user-email', email);
+      localStorage.setItem('user-name', name); // ✅ store name
+      setUserEmail(email);
+      setUserName(name); // ✅ pass name to App state
+      alert(message);
       onClose();
-    } else {
-      alert('Invalid credentials. Please try again or sign up.');
+
+      // ✅ Redirect based on role
+      if (roles.includes('ADMIN')) {
+        navigate('/admin-dashboard');
+      } else if (roles.includes('PACKAGE_MANAGER')) {
+        navigate('/package-dashboard');
+      } else if (roles.includes('HOTEL_MANAGER')) {
+        navigate('/hotel-dashboard');
+      } else if (roles.includes('FLIGHT_MANAGER')) {
+        navigate('/flight-dashboard');
+      } else if (roles.includes('USER')) {
+        navigate('/');
+      } else {
+        console.warn('Unrecognized role:', roles);
+        navigate('/');
+      }
+
+    } catch (error: any) {
+      console.error('Login error:', error);
+      if (error.response) {
+        alert(error.response.data.message || 'Invalid credentials');
+      } else {
+        alert('Login failed: Network error');
+      }
     }
   };
 

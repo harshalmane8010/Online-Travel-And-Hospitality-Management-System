@@ -1,0 +1,80 @@
+/* ===== Base ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f1f4f9;
+  }
+  
+  .dashboard-content {
+    padding: 2rem;
+  }
+  
+  h2 {
+    font-weight: 600;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  /* ===== Glass Effect ===== */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(200, 200, 200, 0.2);
+  }
+  
+  /* ===== Table ===== */
+  .table-transparent th {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .table-transparent td {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+  
+  /* ===== Search Bar ===== */
+  .search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #333;
+  }
+  
+  /* ===== Header ===== */
+  .top-header {
+    background: #ffffff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* ===== Notifications and Avatars ===== */
+  .header-actions img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* ===== Buttons ===== */
+  button,
+  .btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  
+  button:hover,
+  .btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+  }
+  
+  /* ===== Forms ===== */
+  form .form-control,
+  form .form-select {
+    border-radius: 8px;
+  }
+  
+  /* ===== Utility ===== */
+  .text-white {
+    color: white !important;
+  }
+  

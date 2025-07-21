@@ -1,0 +1,97 @@
+/* 🧾 Core Payment Form Layout */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  /* 🧱 Card Style - More Compact */
+  .payment-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+  }
+  
+  /* 🎨 Labels & Inputs */
+  .payment-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .payment-input-group {
+    margin-top: 1rem;
+  }
+  
+  .payment-input {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .payment-input:focus {
+    border-color: #0077be;
+    box-shadow: 0 0 0 0.15rem rgba(0, 119, 190, 0.25);
+  }
+  
+  /* 🎯 Button Styling */
+  .payment-submit-btn {
+    margin-top: 1.5rem;
+    padding: 0.6rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    background: linear-gradient(to right, #0077be, #00c6ff);
+    color: white;
+    border: none;
+  }
+  
+  .payment-submit-btn:hover {
+    background: linear-gradient(to right, #00c6ff, #0077be);
+  }
+  
+  /* 📱 Responsive Adjustments */
+  @media (max-width: 768px) {
+    .payment-form {
+      padding: 0.5rem;
+    }
+  
+    .payment-submit-btn {
+      padding: 0.5rem 1.5rem;
+      font-size: 0.95rem;
+    }
+  
+    .payment-card {
+      padding: 0.8rem;
+    }
+  }
+  .card-body {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #333;
+    background-color: #fff;
+    border-radius: 10px;
+    max-height: fit-content;
+  }
+  
+  /* Optional: Light Hover Effect */
+  .card:hover .card-body {
+    box-shadow: inset 0 0 6px rgba(0, 119, 190, 0.08);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  /* Compact spacing between form elements */
+  .card-body > *:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+  
+  
+  .card-body.payment-section {
+    background-color: #f8fcff;
+    border-left: 4px solid #0077be;
+  }
+  
